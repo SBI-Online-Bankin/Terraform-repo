@@ -12,7 +12,7 @@ pipeline{
     }
     parameters{
 
-        int(name:'package', defaultValue:'git', description:'type the package name')
+        string(name:'package', defaultValue:'git', description:'type the package name')
     }
     stages{
         stage('Init'){
