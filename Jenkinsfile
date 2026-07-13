@@ -15,7 +15,7 @@ pipeline{
     parameters{
 
         string(name:'package', defaultValue:'git', description:'type the package name')
-        choice(name: 'Stage_to_Run', choices: [ 'All', 'Init', 'Plan', 'Apply'])
+        choice(name: 'Stage_to_Run', choices: [ 'All', 'Init', 'Plan', 'Apply', 'Destroy'])
     }
     stages{
         stage('install terraform'){
@@ -66,6 +66,18 @@ pipeline{
                 sh """
                 cd VPC
                 terraform apply --auto-approve
+                """
+            }
+        }
+        stage{
+            when{
+                anyOf{
+                    expression {params.Destroy == 'Destroy'}
+                }
+            }
+            steps{
+                sh """
+                terraform destory --auto-approve
                 """
             }
         }
