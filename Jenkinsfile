@@ -81,10 +81,10 @@ pipeline{
                 }
             }
             steps{
-                input{
+                input(
                     message "Really want to run destroy"
                     submitter 'Shiva Indla'
-                }
+                )
                 sh """
                 cd VPC
                 terraform destroy --auto-approve
