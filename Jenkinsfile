@@ -22,7 +22,7 @@ pipeline{
                 sh """
                 sudo su -
                 chmod +x terraform-installation.sh
-                ./terraform-installation.sh
+                ./terraform-installation.sh ${params.package}
                 """
             }
         }
