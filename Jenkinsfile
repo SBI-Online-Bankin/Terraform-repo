@@ -69,7 +69,7 @@ pipeline{
                 """
             }
         }
-        stage{
+        stage('Destory'){
             when{
                 anyOf{
                     expression {params.Destroy == 'Destroy'}
