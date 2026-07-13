@@ -50,7 +50,8 @@ pipeline{
             }
             steps{
                 sh """
-                    terraform plan
+                cd VPC
+                terraform plan
                 """
             }
         }
