@@ -75,6 +75,10 @@ pipeline{
                     expression {params.Stage_to_Run == 'Destroy'}
                 }
             }
+            input{
+                message "Really want to run destroy"
+                ok "Yes Continue"
+            }
             steps{
                 sh """
                 cd VPC
