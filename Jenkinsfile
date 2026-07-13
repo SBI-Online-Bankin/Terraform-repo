@@ -77,7 +77,7 @@ pipeline{
             }
             steps{
                 sh """
-                terraform destory --auto-approve
+                terraform destroy --auto-approve
                 """
             }
         }
