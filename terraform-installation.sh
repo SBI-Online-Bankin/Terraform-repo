@@ -11,8 +11,8 @@ validate_function(){
         echo "Package $2 is already installed"
     else
         echo "installing $2"
-        sudo yum-config-manager --add-repo https://rpm.releases.hashicorp.com/RHEL/hashicorp.repo
-        sudo yum -y install $2
+        sudo dnf config-manager --add-repo https://rpm.releases.hashicorp.com/AmazonLinux/hashicorp.repo
+        sudo dnf install -y $2
     fi
 }
 
