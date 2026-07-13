@@ -30,7 +30,7 @@ pipeline{
             steps{
                 sh '''
                 cd VPC
-                ls -lrt
+                terraform init
                 '''
             }
         }
