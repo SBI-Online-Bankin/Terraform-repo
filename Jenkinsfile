@@ -65,7 +65,7 @@ pipeline{
             input{
                 message 'Waiting for approval'
                 ok 'Approve'
-                submitter 'Shiva Indla'
+                submitter 'admin'
             }
             steps{
                 sh """
