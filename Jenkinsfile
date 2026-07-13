@@ -15,6 +15,7 @@ pipeline{
     parameters{
 
         string(name:'package', defaultValue:'git', description:'type the package name')
+        choice(name: 'Stage_to_Run', choices: [ 'All', 'Init', 'Apply'])
     }
     stages{
         stage('install terraform'){
@@ -25,8 +26,14 @@ pipeline{
                 ./terraform-installation.sh ${params.package}
                 """
             }
-        }
+        }   
         stage('Init'){
+            when{
+                anyOf{
+                    expression {params.Stage_to_Run == 'All'}
+                    expression {params.Stage_to_Run == 'Init'}
+                }
+            }
             steps{
                 sh '''
                 cd VPC
@@ -35,12 +42,24 @@ pipeline{
             }
         }
         stage('Plan'){
+            when{
+                anyOf{
+                    expression{params.Stage_to_Run == 'All'}
+                    expression {params.Stage_to_Run == 'Plan'}
+                }
+            }
             steps{
                 sh """
                 """
             }
         }
         stage('Apply'){
+            when{
+                anyOf{
+                    expression {params.Stage_to_Run == 'All'}
+                    expression {params.Stage_to_Run== 'Apply'}
+                }
+            }
             steps{
                 sh """
                 """
