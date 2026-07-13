@@ -36,8 +36,8 @@ pipeline{
             }
             steps{
                 sh '''
-                cd VPC
-                terraform init
+                    cd VPC
+                    terraform init
                 '''
             }
         }
@@ -50,8 +50,8 @@ pipeline{
             }
             steps{
                 sh """
-                cd VPC
-                terraform plan
+                    cd VPC
+                    terraform plan
                 """
             }
         }
@@ -70,8 +70,8 @@ pipeline{
                     submitter 'Shiva Indla'
                 }
                 sh """
-                cd VPC
-                terraform apply --auto-approve
+                    cd VPC
+                    terraform apply --auto-approve
                 """
             }
         }
@@ -87,8 +87,8 @@ pipeline{
                     submitter: 'Shiva Indla'
                 )
                 sh """
-                cd VPC
-                terraform destroy --auto-approve
+                    cd VPC
+                    terraform destroy --auto-approve
                 """
             }
         }
