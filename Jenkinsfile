@@ -64,7 +64,7 @@ pipeline{
             }
             input{
                 message 'Waiting for approval'
-                ok 'Approve'
+                //ok 'Approve'
                 submitter 'admin'
             }
             steps{
