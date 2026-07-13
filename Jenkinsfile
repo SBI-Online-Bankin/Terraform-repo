@@ -64,6 +64,7 @@ pipeline{
             }
             steps{
                 sh """
+                cd VPC
                 terraform apply
                 """
             }
