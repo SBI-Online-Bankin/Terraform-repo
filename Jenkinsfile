@@ -50,6 +50,7 @@ pipeline{
             }
             steps{
                 sh """
+                    echo "this is plan"
                 """
             }
         }
