@@ -59,7 +59,7 @@ pipeline{
             when{
                 anyOf{
                     expression {params.Stage_to_Run == 'All'}
-                    expression {params.Stage_to_Run== 'Apply'}
+                    expression {params.Stage_to_Run == 'Apply'}
                 }
             }
             input{
@@ -82,7 +82,7 @@ pipeline{
             }
             input{
                 message "Really want to run destroy"
-                ok "Yes Continue"
+                submitter 'Shiva Indla'
             }
             steps{
                 sh """
