@@ -65,7 +65,7 @@ pipeline{
             steps{
                 sh """
                 cd VPC
-                terraform apply
+                terraform apply --auto-approve
                 """
             }
         }
