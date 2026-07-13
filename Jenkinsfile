@@ -50,7 +50,7 @@ pipeline{
             }
             steps{
                 sh """
-                    terraform plan -out=tfplan
+                    terraform plan
                 """
             }
         }
