@@ -79,17 +79,16 @@ pipeline{
                 anyOf{
                     expression {params.Stage_to_Run == 'Destroy'}
                 }
-            
+            }
+            steps{
                 input{
                     message "Really want to run destroy"
                     submitter 'Shiva Indla'
                 }
-                steps{
                 sh """
                 cd VPC
                 terraform destroy --auto-approve
                 """
-                }
             }
         }
     }
