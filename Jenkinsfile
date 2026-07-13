@@ -50,7 +50,7 @@ pipeline{
             }
             steps{
                 sh """
-                    echo "this is plan"
+                    terraform plan -out=tfplan
                 """
             }
         }
