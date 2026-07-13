@@ -11,9 +11,8 @@ validate_function(){
         echo "Package $2 is already installed"
     else
         echo "installing $2"
-        sudo yum install -y yum-utils
         sudo yum-config-manager --add-repo https://rpm.releases.hashicorp.com/RHEL/hashicorp.repo
-        sudo yum -y install terraform
+        sudo yum -y install $2
     fi
 }
 
