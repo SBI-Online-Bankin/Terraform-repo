@@ -82,7 +82,7 @@ pipeline{
             }
             steps{
                 input(
-                    message: 'Really want to run destroy'
+                    message: 'Really want to run destroy',
                     submitter: 'Shiva Indla'
                 )
                 sh """
