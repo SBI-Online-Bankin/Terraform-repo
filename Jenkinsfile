@@ -62,12 +62,13 @@ pipeline{
                     expression {params.Stage_to_Run == 'Apply'}
                 }
             }
-            input{
-                message 'Waiting for approval'
-                //ok 'Approve'
-                submitter 'Shiva Indla'
-            }
+
             steps{
+                input{
+                    message 'Waiting for approval'.
+                    //ok 'Approve'
+                    submitter 'Shiva Indla'
+                }
                 sh """
                 cd VPC
                 terraform apply --auto-approve
