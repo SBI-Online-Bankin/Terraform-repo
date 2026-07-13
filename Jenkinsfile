@@ -72,7 +72,7 @@ pipeline{
         stage('Destory'){
             when{
                 anyOf{
-                    expression {params.Destroy == 'Destroy'}
+                    expression {params.Stage_to_Run == 'Destroy'}
                 }
             }
             steps{
