@@ -62,6 +62,11 @@ pipeline{
                     expression {params.Stage_to_Run== 'Apply'}
                 }
             }
+            input{
+                message: "Waiting for approval"
+                ok: "Approve"
+                submitter: "Shiva Indla"
+            }
             steps{
                 sh """
                 cd VPC
