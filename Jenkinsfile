@@ -15,7 +15,7 @@ pipeline{
     parameters{
 
         string(name:'package', defaultValue:'git', description:'type the package name')
-        choice(name: 'Stage_to_Run', choices: [ 'All', 'Init', 'Plan', 'Apply', 'Destroy'])
+        choice(name: 'Stage_to_Run', choices: [ 'All', 'Init', 'Plan', 'Apply', 'Destroy' ])
     }
     stages{
         stage('install terraform'){
@@ -74,7 +74,7 @@ pipeline{
                 """
             }
         }
-        stage('Destory'){
+        stage('Destroy'){
             when{
                 anyOf{
                     expression {params.Stage_to_Run == 'Destroy'}
