@@ -82,8 +82,8 @@ pipeline{
             }
             steps{
                 input(
-                    message "Really want to run destroy"
-                    submitter 'Shiva Indla'
+                    message: 'Really want to run destroy'
+                    submitter: 'Shiva Indla'
                 )
                 sh """
                 cd VPC
