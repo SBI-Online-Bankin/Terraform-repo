@@ -15,9 +15,19 @@ pipeline{
         string(name:'package', defaultValue:'git', description:'type the package name')
     }
     stages{
+        stage('install terraform'){
+            steps{
+                sh """
+                sudo su -
+                chmod +x terraform-installation.sh
+                ./terraform-installation.sh
+                """
+            }
+        }
         stage('Init'){
             steps{
                 sh '''
+                cd VPC
                 ls -lrt
                 '''
             }
