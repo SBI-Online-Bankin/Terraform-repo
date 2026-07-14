@@ -96,7 +96,7 @@ pipeline{
     post{
         always{
             echo "i will say hellow always"
-            deleteDir()
+            //deleteDir()
         }
         success{
             echo "i will say hellow when success"
